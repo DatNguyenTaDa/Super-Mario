@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fb07ac7d5f744a48fe6c56ff43ae1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurryUp: 0
+  hurryUp: 1
   marioSize: 0
   lives: 0
   coins: 0
@@ -648,6 +648,7 @@ MonoBehaviour:
   levelEntryWalkSpeedX: 3.05
   isCrouching: 0
   inputFreezed: 0
+  battu: 1
   isDying: 0
 --- !u!50 &50873520463771854
 Rigidbody2D:

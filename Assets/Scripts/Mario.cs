@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 // player functions
 
-/* Mario physics reference: http://s276.photobucket.com/user/jdaster64/media/smb_playerphysics.png.html */
-
 
 public class Mario : MonoBehaviour {
 	private LevelManager t_LevelManager;
@@ -62,6 +60,7 @@ public class Mario : MonoBehaviour {
 
 	public bool inputFreezed;
 
+	public bool battu;
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +82,8 @@ public class Mario : MonoBehaviour {
 		jumpButtonReleased = true;
 		fireTime1 = 0;
 		fireTime2 = 0;
+
+		battu = false;
 	}
 
 
@@ -272,8 +273,16 @@ public class Mario : MonoBehaviour {
 			faceDirectionX = Input.GetAxisRaw ("Horizontal"); // > 0 for right, < 0 for left
 			isDashing = Input.GetButton ("Dash");
 			isCrouching = Input.GetButton ("Crouch");
-			isShooting = Input.GetButtonDown ("Dash");
+			isShooting = Input.GetButton ("Fire");
 			jumpButtonHeld = Input.GetButton ("Jump");
+			if(Input.GetKeyDown(KeyCode.P))
+			{
+				if(!battu)
+				{
+					battu = true;
+				}
+				else battu = false;
+			}
 			if (Input.GetButtonUp ("Jump")) {
 				jumpButtonReleased = true;
 			}
@@ -407,7 +416,7 @@ public class Mario : MonoBehaviour {
 		Vector2 bottomSide = new Vector2 (0f, 1f);
 		bool bottomHit = normal == bottomSide;
 
-		if (other.gameObject.tag.Contains ("Enemy")) { // TODO: koopa shell static does no damage
+		if (other.gameObject.tag.Contains ("Enemy") && !battu) { // TODO: koopa shell static does no damage
 			Enemy enemy = other.gameObject.GetComponent<Enemy> ();
 
 			if (!t_LevelManager.isInvincible ()) {
