@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// should not emerge if Mario is within this distance of pipe
 public class Piranha : Enemy {
 	private LevelManager t_LevelManager;
 	private GameObject mario;
@@ -9,9 +9,8 @@ public class Piranha : Enemy {
 	private PatrolVertical patrolScript;
 
 	private bool visible;
-	private float maxDistanceToMove = 2; // should not emerge if Mario is within this distance of pipe
+	private float maxDistanceToMove = 2; 
 
-	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
 		mario = FindObjectOfType<Mario> ().gameObject;

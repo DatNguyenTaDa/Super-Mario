@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//ennemy koopa
+//control ennemy koopa
 public class Koopa : Enemy {
 	public GameObject KoopaShell;
 

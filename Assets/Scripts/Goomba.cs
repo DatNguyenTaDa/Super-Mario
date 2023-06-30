@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Destroy the enemy
+//control the enemy
 public class Goomba : Enemy {
 	private Animator m_Animator;
 	private float stompedDuration = 0.5f;

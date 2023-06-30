@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//coin detector
 public class RegularBrickBlockCoinDetector : MonoBehaviour {
 	public GameObject coinOnTop;
 

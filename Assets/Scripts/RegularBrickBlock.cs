@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Hit any enemy on top
+// check and collect coins on top
+// Bounce or break depending on Mario's size
 public class RegularBrickBlock : MonoBehaviour {
 	public GameObject BrickPiece;
 	public GameObject TempCollider;
@@ -28,18 +31,16 @@ public class RegularBrickBlock : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		time2 = Time.time;
 		if (other.tag == "Player" && time2-time1 >= WaitBetweenBounce) {
-			// Hit any enemy on top
+			
 			foreach (GameObject enemyObj in enemiesOnTop) {
 				t_LevelManager.BlockHitEnemy (enemyObj.GetComponent<Enemy> ());
 			}
 
-			// check and collect coins on top
 			if (m_CoinDetector.coinOnTop) {
 				Instantiate (BlockCoin, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
 				Destroy (m_CoinDetector.coinOnTop);
 			}
 
-			// Bounce or break depending on Mario's size
 			if (t_LevelManager.marioSize == 0) {
 				m_Animator.SetTrigger ("bounce");
 				t_LevelManager.soundSource.PlayOneShot (t_LevelManager.bumpSound);
