@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Show text lines
 public class FloatingTextEffect : MonoBehaviour {
 
 	// Use this for initialization

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Mario Stomp Enemy
 public class MarioStompBox : MonoBehaviour {
 	private LevelManager t_LevelManager;
 

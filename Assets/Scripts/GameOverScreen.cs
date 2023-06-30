@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
-
+//UI features
 
 public class GameOverScreen : MonoBehaviour {
 	private GameStateManager t_GameStateManager;

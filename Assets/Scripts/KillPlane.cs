@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//destroy plane
 public class KillPlane : MonoBehaviour {
 	private LevelManager t_LevelManager;
 

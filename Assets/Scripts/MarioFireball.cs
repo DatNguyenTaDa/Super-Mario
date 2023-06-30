@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Function of player movement, speed, Detroy enemy, die and Anim
 public class MarioFireball : MonoBehaviour {
 	public float directionX; // > 0 for right, < 0 for left
 	private float explosionDuration = .25f;

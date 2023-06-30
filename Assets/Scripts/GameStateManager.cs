@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Functions at the start of the game
 
 public class GameStateManager : MonoBehaviour {
 	public bool spawnFromPoint;
 	public int spawnPointIdx;
 	public int spawnPipeIdx;
-
 	public int marioSize;
 	public int lives;
 	public int coins;

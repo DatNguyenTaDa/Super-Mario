@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// increase bonuses
 public class Firebar : Enemy {
 	public Transform pivot;
 	public float rotateSpeed = 75;

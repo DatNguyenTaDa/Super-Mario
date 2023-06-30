@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// moving platform object detector
 public class MovingPlatformObjectDetector : MonoBehaviour {
 	private Dictionary<GameObject, Transform> objectsOnTop; // store objects and their original parents
 

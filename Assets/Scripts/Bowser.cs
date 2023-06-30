@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// The functions of Mario
 public class Bowser : Enemy {
 	private LevelManager t_LevelManager;
 	private GameObject mario;

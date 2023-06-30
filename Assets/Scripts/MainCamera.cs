@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//The camera moves according to the player
 public class MainCamera : MonoBehaviour {
 	public GameObject target;
 	public float followAhead = 2.6f;

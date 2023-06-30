@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// spawn pipe
 
 public class PipeWarpSide : MonoBehaviour {
 	private LevelManager t_LevelManager;

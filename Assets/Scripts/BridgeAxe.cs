@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//kill plane and bridge collapse
 public class BridgeAxe : MonoBehaviour {
 	private LevelManager t_LevelManager;
 	private Mario mario;

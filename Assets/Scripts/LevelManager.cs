@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 
-
+// Audio, pause, power time
 public class LevelManager : MonoBehaviour {
 	private const float loadSceneDelay = 1f;
 

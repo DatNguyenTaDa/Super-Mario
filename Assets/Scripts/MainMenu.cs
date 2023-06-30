@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//  screen: music, volum, sound, map
 
 public class MainMenu : MonoBehaviour {
 	private GameStateManager t_GameStateManager;

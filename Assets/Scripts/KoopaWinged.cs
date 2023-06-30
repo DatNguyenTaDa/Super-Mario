@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// spawn koopa and destroy
 public class KoopaWinged : Enemy {
 	public GameObject Koopa;
 
-	void Start() { // ???
+	void Start() { 
 		starmanBonus = 100;
 		rollingShellBonus = 500;
 		hitByBlockBonus = 100;

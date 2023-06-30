@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// player functions
 
 /* Mario physics reference: http://s276.photobucket.com/user/jdaster64/media/smb_playerphysics.png.html */
 

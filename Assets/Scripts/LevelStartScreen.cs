@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
-
+// Screen level, world, score,coin,lives
 
 public class LevelStartScreen : MonoBehaviour {
 	private GameStateManager t_GameStateManager;

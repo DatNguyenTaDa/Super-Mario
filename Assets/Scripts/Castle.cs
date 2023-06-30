@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Castle location
 public class Castle : MonoBehaviour {
 	private LevelManager t_LevelManager;
 	private Transform flag;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Speed and direction
 public class BowserFire : Enemy {
 	private LevelManager t_LevelManager;
 	private Rigidbody2D m_Rigidbody2D;

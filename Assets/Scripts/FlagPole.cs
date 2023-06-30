@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//flagVelocity
 public class FlagPole : MonoBehaviour {
 	private LevelManager t_LevelManager;
 
