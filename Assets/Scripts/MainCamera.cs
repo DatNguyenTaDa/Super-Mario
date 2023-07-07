@@ -7,7 +7,7 @@ public class MainCamera : MonoBehaviour {
 	public float followAhead = 2.6f;
 	public float smoothing = 5;
 	public bool canMove;
-	public bool canMoveBackward = false;
+	public bool canMoveBackward;
 
 	private Transform leftEdge;
 	private Transform rightEdge;

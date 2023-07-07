@@ -513,9 +513,11 @@ public class LevelManager : MonoBehaviour {
 	public void AddLife() {
 		lives++;
 		soundSource.PlayOneShot (oneUpSound);
-	}
+        CreateFloatingText("1UP", mario.transform.position);
 
-	public void AddLife(Vector3 spawnPos) {
+    }
+
+    public void AddLife(Vector3 spawnPos) {
 		lives++;
 		soundSource.PlayOneShot (oneUpSound);
 		CreateFloatingText ("1UP", spawnPos);
@@ -545,12 +547,20 @@ public class LevelManager : MonoBehaviour {
 
 	public void AddScore(int bonus) {
 		scores += bonus;
+		if(scores%1000==0)
+		{
+			AddLife();
+		}
 		SetHudScore ();
 	}
 
 	public void AddScore(int bonus, Vector3 spawnPos) {
 		scores += bonus;
-		SetHudScore ();
+        if (scores % 1000 == 0)
+        {
+            AddLife();
+        }
+        SetHudScore ();
 		if (bonus > 0) {
 			CreateFloatingText (bonus.ToString (), spawnPos);
 		}

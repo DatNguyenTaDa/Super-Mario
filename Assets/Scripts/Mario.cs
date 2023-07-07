@@ -324,28 +324,30 @@ public class Mario : MonoBehaviour {
 	}
 
 
-	bool isClimbingFlagPole = false;
-	Vector2 climbFlagPoleVelocity = new Vector2 (0, -5f);
-	public void ClimbFlagPole() {
-		FreezeUserInput ();
-		isClimbingFlagPole = true;
-		m_Animator.SetBool ("climbFlagPole", true);
-		m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
-		Debug.Log (this.name + ": Mario starts climbing flag pole");
-	}
+    bool isClimbingFlagPole = false;
+    Vector2 climbFlagPoleVelocity = new Vector2(0, -5f);
+    public void ClimbFlagPole()
+    {
+        FreezeUserInput();
+        isClimbingFlagPole = true;
+        m_Animator.SetBool("climbFlagPole", true);
+        m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+        Debug.Log(this.name + ": Mario starts climbing flag pole");
+    }
 
 
-	void JumpOffPole() { // get off pole and start walking right
-		transform.position = new Vector2 (transform.position.x + .5f, transform.position.y);
-		m_Animator.SetBool ("climbFlagPole", false);
-		AutomaticWalk(castleWalkSpeedX);
-		m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-		Debug.Log (this.name + ": Mario jumps off pole and walks to castle");
-	}
+    void JumpOffPole()
+    { // get off pole and start walking right
+        transform.position = new Vector2(transform.position.x + .5f, transform.position.y);
+        m_Animator.SetBool("climbFlagPole", false);
+        AutomaticWalk(castleWalkSpeedX);
+        m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        Debug.Log(this.name + ": Mario jumps off pole and walks to castle");
+    }
 
 
-	/****************** Automatic movement (e.g. walk to castle sequence) */
-	public void UnfreezeUserInput() {
+    /****************** Automatic movement (e.g. walk to castle sequence) */
+    public void UnfreezeUserInput() {
 		inputFreezed = false;
 		Debug.Log (this.name + " UnfreezeUserInput called");
 	}
