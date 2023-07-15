@@ -11,7 +11,7 @@ public class MovingPlatformVerticalSpawner : MonoBehaviour {
 	public Transform DownStop;
 	public Transform SpawnPos;
 
-	private float WaitBetweenSpawn = 1.5f;
+	private float WaitBetweenSpawn = 2.5f;
 	private float minDistanceToMove = 40; // how close should Mario be for platforms to appear
 
 	private GameObject mario;

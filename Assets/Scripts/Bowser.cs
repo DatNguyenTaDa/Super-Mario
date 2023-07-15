@@ -10,15 +10,26 @@ public class Bowser : Enemy {
 	public Transform FirePos;
 	public GameObject BowserImpostor;
 	public GameObject BowserFire;
+	public GameObject bowserExe;
+	public SpriteRenderer bowserHP;
+
+	public Sprite bowserHp100;
+	public Sprite bowserHp80;
+	public Sprite bowserHp60;
+	public Sprite bowserHp40;
+	public Sprite bowserHp20;
+	public Sprite bowserHp0;
+
 	public bool canMove;
 	public bool active;
+	public bool isHideExe;
 
 	private Vector2 impostorInitialVelocity = new Vector2 (3, 3);
 	private float minDistanceToMove = 55; // start moving if mario is within this distance
 
 	private int fireResistance = 5;
 	private float waitBetweenJump = 3;
-	private float shootFireDelay = .1f; // how long after jump should Bowser release fireball
+	private float shootFireDelay = 1f; // how long after jump should Bowser release fireball
 
 	private float absSpeedX = 1.5f;
 	private float directionX = 1;
@@ -46,10 +57,16 @@ public class Bowser : Enemy {
 		fireballBonus = 0;
 		stompBonus = 0;
 		defeatBonus = 5000;
+
+		if(isHideExe)
+		{
+			bowserExe.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateBowserHp();
 		if (active) {
 			if (!canMove && Mathf.Abs (mario.gameObject.transform.position.x - transform.position.x) <= minDistanceToMove) {
 				canMove = true;
@@ -86,7 +103,20 @@ public class Bowser : Enemy {
 			t_LevelManager.soundSource.PlayOneShot (t_LevelManager.bowserFallSound);
 		}
 	}
-
+	public void UpdateBowserHp()
+	{
+		if(fireResistance<=2)
+			bowserExe.SetActive (true);
+		switch(fireResistance)
+		{
+			case 0: bowserHP.sprite = bowserHp0; break;
+			case 1: bowserHP.sprite = bowserHp20; break;
+			case 2: bowserHP.sprite = bowserHp40; break;
+			case 3: bowserHP.sprite = bowserHp60; break;
+			case 4: bowserHP.sprite = bowserHp80; break;
+			case 5: bowserHP.sprite = bowserHp100; break;
+        }
+	}
 	IEnumerator ShootFireCo(float delay) {
 		yield return new WaitForSeconds (delay);
 		GameObject fire = Instantiate(BowserFire, FirePos.position, Quaternion.identity);

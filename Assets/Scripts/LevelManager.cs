@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
-
 // Audio, pause, power time
 public class LevelManager : MonoBehaviour {
 	private const float loadSceneDelay = 1f;
@@ -77,7 +76,7 @@ public class LevelManager : MonoBehaviour {
 	public bool gamePaused;
 	public bool timerPaused;
 	public bool musicPaused;
-
+	private bool isMute;
 
 	void Awake() {
 		Time.timeScale = 1;
@@ -97,9 +96,10 @@ public class LevelManager : MonoBehaviour {
 		musicSource.volume = PlayerPrefs.GetFloat("musicVolume");
 		soundSource.volume = PlayerPrefs.GetFloat("soundVolume");
 		pauseSoundSource.volume = PlayerPrefs.GetFloat("soundVolume");
+		isMute = false;
 
 		// HUD
-		SetHudCoin ();
+		SetHudCoin();
 		SetHudScore ();
 		SetHudTime ();
 		if (hurryUp) {
@@ -127,6 +127,26 @@ public class LevelManager : MonoBehaviour {
 			timeLeft -= Time.deltaTime; // 1 game sec ~ 0.4 real time sec
 			SetHudTime ();
 		}
+
+		if(Input.GetKeyDown(KeyCode.M))
+		{
+			if(isMute)
+				isMute = false;
+			else if(!isMute)
+				isMute = true;
+		}
+		if(isMute)
+		{
+			musicSource.mute = true;
+			soundSource.mute = true;
+			pauseSoundSource.mute = true;
+		}
+		else if(!isMute)
+		{
+            musicSource.mute = false;
+            soundSource.mute = false;
+            pauseSoundSource.mute = false;
+        }
 
 		if (timeLeftInt < 100 && !hurryUp) {
 			hurryUp = true;
@@ -547,24 +567,24 @@ public class LevelManager : MonoBehaviour {
 
 	public void AddScore(int bonus) {
 		scores += bonus;
-		if(scores%1000==0)
-		{
-			AddLife();
-		}
 		SetHudScore ();
-	}
-
-	public void AddScore(int bonus, Vector3 spawnPos) {
-		scores += bonus;
-        if (scores % 1000 == 0)
+        if (scores % 5000 == 0)
         {
             AddLife();
         }
+    }
+
+	public void AddScore(int bonus, Vector3 spawnPos) {
+		scores += bonus;
         SetHudScore ();
 		if (bonus > 0) {
 			CreateFloatingText (bonus.ToString (), spawnPos);
 		}
-	}
+        if (scores % 5000 == 0)
+        {
+            AddLife();
+        }
+    }
 
 
 	/****************** Misc */
