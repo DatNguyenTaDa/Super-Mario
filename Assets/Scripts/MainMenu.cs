@@ -81,7 +81,15 @@ public class MainMenu : MonoBehaviour {
 			SceneManager.LoadScene ("Level Start Screen");
 		}
 	}
-	public void QuitGame() {
+    public void StartWorldBoss()
+    {
+        if (!volumePanelActive)
+        {
+            t_GameStateManager.sceneToLoad = "World Boss";
+            SceneManager.LoadScene("Level Start Screen");
+        }
+    }
+    public void QuitGame() {
 		if (!volumePanelActive) {
 			Application.Quit ();
 		}
