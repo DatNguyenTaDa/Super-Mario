@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //Aspect radio
 public class MainCameraAspectRatio : MonoBehaviour {
-	public Vector2 targetAspects = new Vector2(16f, 15f);
+	public Vector2 targetAspects = new Vector2(16f, 9f);
 
 	void Start() {
 		float targetaspect = targetAspects.x / targetAspects.y;

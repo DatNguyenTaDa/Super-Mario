@@ -283,6 +283,10 @@ public class Mario : MonoBehaviour {
 				}
 				else battu = false;
 			}
+			if(Input.GetKeyDown(KeyCode.O) && t_LevelManager.marioSize == 0)
+			{
+				StartCoroutine(UpSizeForTwo());
+			}
 			if (Input.GetButtonUp ("Jump")) {
 				jumpButtonReleased = true;
 			}
@@ -396,8 +400,13 @@ public class Mario : MonoBehaviour {
 	public void UpdateSize() {
 		GetComponent<Animator>().SetInteger("marioSize", FindObjectOfType<LevelManager>().marioSize);
 	}
-
-	float IncreaseWithinBound(float val, float delta, float maxVal = Mathf.Infinity) {
+	IEnumerator UpSizeForTwo()
+	{
+		t_LevelManager.MarioPowerUp();
+		yield return new WaitForSeconds(0.5f);
+        t_LevelManager.MarioPowerUp();
+    }
+    float IncreaseWithinBound(float val, float delta, float maxVal = Mathf.Infinity) {
 		val += delta;
 		if (val > maxVal) {
 			val = maxVal;

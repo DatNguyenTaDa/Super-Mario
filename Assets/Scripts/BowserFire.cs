@@ -4,9 +4,10 @@ using UnityEngine;
 // Speed and direction
 public class BowserFire : Enemy {
 	private LevelManager t_LevelManager;
+	private BridgeAxe bridgeAxe;
 	private Rigidbody2D m_Rigidbody2D;
 
-	private float absSpeedX = 18;
+	private float absSpeedX = 5;
 	public float directionX = -1; // 1 for right, -1 for left
 
 	// Use this for initialization

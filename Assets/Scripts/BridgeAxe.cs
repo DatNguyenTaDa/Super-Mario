@@ -10,8 +10,7 @@ public class BridgeAxe : MonoBehaviour {
 
 	private float bridgePieceGravity = 8;
 	private float waitBetweenCollapse = .2f;
-	private bool gotAxe;
-
+	public bool gotAxe;
 	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();

@@ -20,7 +20,8 @@ public class MainMenu : MonoBehaviour {
 		t_GameStateManager = FindObjectOfType<GameStateManager> ();
 		t_GameStateManager.ConfigNewGame ();
 
-		int currentHighScore = PlayerPrefs.GetInt ("highScore", 0);
+        //PlayerPrefs.SetInt("highScore", 0);
+        int currentHighScore = PlayerPrefs.GetInt ("highScore", 0);
 		TopText.text = "TOP- " + currentHighScore.ToString ("D6");
 
 		if (!PlayerPrefs.HasKey ("soundVolume")) {
@@ -80,7 +81,6 @@ public class MainMenu : MonoBehaviour {
 			SceneManager.LoadScene ("Level Start Screen");
 		}
 	}
-
 	public void QuitGame() {
 		if (!volumePanelActive) {
 			Application.Quit ();
